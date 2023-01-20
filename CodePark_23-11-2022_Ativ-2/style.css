@@ -1,0 +1,41 @@
+body{
+    background-color:lightblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.link:hover{
+    scale: 1.2;
+    color: purple;
+    transition: all 0.4s ease-in-out;
+}
+.section1 {
+    text-align: left;
+    border: 2px solid black;
+    margin: 20px;
+    background-color:aquamarine;
+    padding: 30px;
+    position: relative;
+}
+.section2 {
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+    margin: 60px;
+    background-color:cadetblue;
+    padding-left: 20px;
+    position: relative;
+}
+.section3 {
+    font-weight: bold;
+    text-align: center;
+}
+.info:hover{
+    font-weight: bold;
+    text-align: center;
+    scale: 1.2;
+    color: blue;
+    transition: all 0.4s ease-in-out;
+}
+main{
+    margin: 30px;
+}
