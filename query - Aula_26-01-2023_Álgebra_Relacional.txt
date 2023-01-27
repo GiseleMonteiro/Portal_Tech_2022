@@ -1,0 +1,67 @@
+- AULA 26/01/2023 - Álgebra Relacional -
+
+- Select -
+
+Estadias de menos de 5 dias
+σ days < 5 (stay)
+
+Participações no ano de 2001
+σ year = 2001 (participate)
+
+Hotel na cidade de Paris
+σ city = 'Paris' (hotel)
+
+Turista que foi para Grécia (Greece)
+σ country = 'Greece' (hotel)
+
+Estadias de 4 dias e custo menor do que 500
+σ days = 4 ∧ cost < 500 (stay)
+
+Turista com menos de 40 anos de idade de gênero feminino (female)
+σ age < 40 ∧ gender = 'female' (tourist)
+
+- Project -
+
+Custo e código da atividade das participações
+π cost, acode (participate)
+
+Código do hotel, código do turista, e dias das estadias
+π hcode, tcode, days (stay)
+
+Nome das atividades com duração menor de 240 minutos
+π aname, duration_in_minutes (σ (duration_in_minutes < 240) (activity))
+
+Código e nome do hotel na cidade de Nova York (New York)
+π hcode, name (σ(city = 'New York') (hotel))
+
+Nome, país e idade dos turistas com mais de 40 anos de idade
+π name, country, age (σ(age > 40) (tourist))
+
+- Operações Matemáticas -
+
+As participações do turista de código t1 e do turista de código t2 no ano de 2001
+π tcode, year
+σ tcode = 't1' ∧ year = 2001
+participate
+∪
+π tcode, year
+σ tcode = 't2' ∧ year = 2001
+participate
+
+Os dias e custo das estadias no hotel de código h2 nos anos 2003 e 2005
+π hcode, year, days, cost
+σ hcode = 'h2' ∧ year = 2003
+stay
+∪
+π hcode, year, days, cost
+σ hcode = 'h2' ∧ year = 2005
+stay
+
+O nome de um turista de gênero masculino (male), com 25 anos de idade, da Grécia (Greece) e o nome de uma turista de gênero feminino (female), com 30 anos de idade, da França (France)
+π name, gender, age, country
+σ gender = 'male' ∧ age = 25 ∧ country = 'Greece'
+tourist
+∪
+π name, gender, age, country
+σ gender = 'female' ∧ age = 30 ∧ country = 'France'
+tourist
